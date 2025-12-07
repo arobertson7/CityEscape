@@ -51,6 +51,7 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet var destinationsContainerView: UIView!
     @IBOutlet var destinationImageViews: [UIImageView]!
     @IBOutlet var destinationAbbreviationLabels: [UILabel]!
+    @IBOutlet var goButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,10 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         for i in 0..<destinationAbbreviationLabels.count {
             destinationAbbreviationLabels[i].text = String(i + 1)
         }
+        
+        // goButton visibility
+        goButton.isHidden = selectedDestinations.count < 2
+        goButton.tintColor = UIColor(red: 45 / 255.0, green: 182 / 255.0, blue: 93 / 255.0, alpha: 1.0)
     }
     
     // MARK: - CollectionView DataSource
@@ -128,16 +133,16 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "ShowCreatedTrip") {
+            let tripViewController = segue.destination as! TripViewController
+            tripViewController.destinations = selectedDestinations
+        }
     }
-    */
     
+     
     // MARK: - Helper functions
     func updateDestinationsContainerDisplay() {
         // clear display
@@ -150,6 +155,8 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
             destinationImageViews[i].image = selectedDestinations[i].cityImg
             destinationAbbreviationLabels[i].text = selectedDestinations[i].cityAbbreviation
         }
+        // goButton visibility
+        goButton.isHidden = selectedDestinations.count < 2
     }
     
     func isSelected(_ cityName: String) -> Bool {
