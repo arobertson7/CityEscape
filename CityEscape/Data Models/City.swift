@@ -11,9 +11,11 @@ import UIKit
 class City {
     let cityName: String
     let cityImg: UIImage?
+    let cityAbbreviation: String
     
-    init(cityName: String, cityImgFile: String) {
+    init(cityName: String, cityImgFile: String, cityAbbreviation: String) {
         self.cityName = cityName
         self.cityImg = UIImage(named: cityImgFile)
+        self.cityAbbreviation = cityAbbreviation
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class CityCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var cityImage: UIImageView!
+    @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
 
 }
