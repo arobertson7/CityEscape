@@ -1,5 +1,5 @@
 //
-//  TripViewController.swift
+//  TripDetailsViewController.swift
 //  CityEscape
 //
 //  Created by Austin Robertson on 12/7/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TripDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     let cellReuseIdentifier = "TripDestinationCell"
     var destinations: [City] = []
 

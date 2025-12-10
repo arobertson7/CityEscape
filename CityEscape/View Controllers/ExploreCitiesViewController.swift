@@ -1,5 +1,5 @@
 //
-//  CityListViewController.swift
+//  ExploreCitiesViewController.swift
 //  CityEscape
 //
 //  Created by Austin Robertson on 12/5/25.
@@ -7,13 +7,14 @@
 
 import UIKit
 
-class CityListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ExploreCitiesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let cellReuseIdentifier = "CityCollectionViewCell"
-    let cities: [City] = [City(cityName: "Albuquerque, New Mexico", cityImgFile: "albuquerque", cityAbbreviation: "ABQ"),
+    let cities: [City] = [City(cityName: "Rome, Italy", cityImgFile: "rome", cityAbbreviation: "Rome"),
                           City(cityName: "Amalfi Coast, Italy", cityImgFile: "amalfi_coast", cityAbbreviation: "Amalfi"),
                           City(cityName: "Amsterdam, Netherlands", cityImgFile: "amsterdam", cityAbbreviation: "AMS"),
                           City(cityName: "Bar Harbor, Maine", cityImgFile: "bar_harbor", cityAbbreviation: "BH"),
+                          City(cityName: "Lisbon, Portugal", cityImgFile: "lisbon", cityAbbreviation: "LIS"),
                           City(cityName: "Barcelona, Spain", cityImgFile: "barcelona", cityAbbreviation: "Barca"),
                           City(cityName: "Berlin, Germany", cityImgFile: "berlin", cityAbbreviation: "BER"),
                           City(cityName: "Copenhagen, Denmark", cityImgFile: "copenhagen", cityAbbreviation: "CPH"),
@@ -24,11 +25,11 @@ class CityListViewController: UIViewController, UICollectionViewDelegate, UIColl
                           City(cityName: "Hamburg, Germany", cityImgFile: "hamburg", cityAbbreviation: "HAM"),
                           City(cityName: "Knoxville, Tennessee", cityImgFile: "knoxville", cityAbbreviation: "KNX"),
                           City(cityName: "Leipzig, Germany", cityImgFile: "leipzig", cityAbbreviation: "LPZ"),
-                          City(cityName: "Lisbon, Portugal", cityImgFile: "lisbon", cityAbbreviation: "LIS"),
                           City(cityName: "London, England", cityImgFile: "london", cityAbbreviation: "LON"),
                           City(cityName: "Los Angeles, California", cityImgFile: "los_angeles", cityAbbreviation: "LA"),
                           City(cityName: "Lucerne, Switzerland", cityImgFile: "lucerne", cityAbbreviation: "LUC"),
                           City(cityName: "Manhattan Beach, California", cityImgFile: "manhattan_beach", cityAbbreviation: "MNHB"),
+                          City(cityName: "Albuquerque, New Mexico", cityImgFile: "albuquerque", cityAbbreviation: "ABQ"),
                           City(cityName: "Miami, Florida", cityImgFile: "miami", cityAbbreviation: "MIA"),
                           City(cityName: "Milan, Italy", cityImgFile: "milan", cityAbbreviation: "MIL"),
                           City(cityName: "München, Germany", cityImgFile: "munich", cityAbbreviation: "MUN"),
@@ -40,7 +41,6 @@ class CityListViewController: UIViewController, UICollectionViewDelegate, UIColl
                           City(cityName: "Pisa, Italy", cityImgFile: "pisa", cityAbbreviation: "Pisa"),
                           City(cityName: "Pompeii, Italy", cityImgFile: "pompeii", cityAbbreviation: "POM"),
                           City(cityName: "Prague, Czech Republic", cityImgFile: "prague", cityAbbreviation: "PRG"),
-                          City(cityName: "Rome, Italy", cityImgFile: "rome", cityAbbreviation: "Rome"),
                           City(cityName: "Salzburg, Austria", cityImgFile: "salzburg", cityAbbreviation: "SZBG"),
                           City(cityName: "San Gimignano, Italy", cityImgFile: "san_gimignano", cityAbbreviation: "SGM"),
                           City(cityName: "Sedona, Arizona", cityImgFile: "sedona", cityAbbreviation: "SED"),

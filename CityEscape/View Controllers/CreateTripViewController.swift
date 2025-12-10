@@ -137,7 +137,7 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ShowCreatedTrip") {
-            let tripViewController = segue.destination as! TripViewController
+            let tripViewController = segue.destination as! TripDetailsViewController
             tripViewController.destinations = selectedDestinations
         }
     }
