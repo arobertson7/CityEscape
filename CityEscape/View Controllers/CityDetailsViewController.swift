@@ -7,8 +7,21 @@
 
 import UIKit
 
+protocol CityDetailsViewControllerDelegate: AnyObject {
+    func CityDetailsViewController(
+        _ controller: CityDetailsViewController,
+        favorited city: City
+    )
+    
+    func CityDetailsViewController(
+        _ controller: CityDetailsViewController,
+        unfavorited city: City
+    )
+}
+
 class CityDetailsViewController: UIViewController {
-    var city: City?
+    var city: City!
+    var dataModel: DataModel!
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var travelDetailsLabel: UILabel!
     @IBOutlet var cityImageView: UIImageView!
@@ -20,12 +33,23 @@ class CityDetailsViewController: UIViewController {
 
         if let city = city {
             cityNameLabel.text = city.cityName
-            cityImageView.image = city.cityImg
+            cityImageView.image = UIImage(named: city.cityImgFile)
             
             cityImageView.layer.cornerRadius = 15.0
             cityImageView.layer.masksToBounds = true
             cityImageView.layer.borderWidth = 0.5
             cityImageView.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    
+    @IBAction func toggleFavoriteButton(_ favoriteButton: UIButton) {
+        let newIcon = favoriteButton.titleLabel!.text == "♡" ? "🩷" : "♡"
+        favoriteButton.setTitle(newIcon, for: .normal)
+        
+        if (newIcon == "🩷") {
+            dataModel.CityDetailsViewController(self, favorited: city)
+        } else {
+            dataModel.CityDetailsViewController(self, unfavorited: city)
         }
     }
     

@@ -481,6 +481,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MyCities" id="T8i-b4-lGM"/>
+                    <connections>
+                        <outlet property="tableView" destination="FX8-Tl-MtF" id="hYP-4p-8HG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1X-gu-PqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -734,17 +737,20 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOp-Id-L65">
-                                <rect key="frame" x="297" y="614" width="80" height="35"/>
+                                <rect key="frame" x="317" y="606" width="60" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="1IS-qF-xa1"/>
+                                    <constraint firstAttribute="width" constant="60" id="1IS-qF-xa1"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="♡">
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="♡"/>
+                                <state key="selected" title="🩷"/>
+                                <connections>
+                                    <action selector="toggleFavoriteButton:" destination="Zfv-Ck-Nwj" eventType="touchUpInside" id="vLu-P6-EOJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-7Z-fSH">
-                                <rect key="frame" x="16" y="614" width="265" height="20.333333333333371"/>
+                                <rect key="frame" x="16" y="614" width="285" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -765,7 +771,7 @@
                             <constraint firstItem="2Hx-O1-ez5" firstAttribute="trailing" secondItem="eOp-Id-L65" secondAttribute="trailing" constant="16" id="bkk-dF-FD2"/>
                             <constraint firstItem="kJa-L3-nvm" firstAttribute="top" secondItem="paC-fu-2d2" secondAttribute="bottom" constant="25" id="kjS-nb-mdT"/>
                             <constraint firstItem="kJa-L3-nvm" firstAttribute="centerX" secondItem="paC-fu-2d2" secondAttribute="centerX" id="ojR-rQ-gU2"/>
-                            <constraint firstItem="eOp-Id-L65" firstAttribute="top" secondItem="Bab-vH-0Hz" secondAttribute="bottom" constant="20" id="y50-z2-R7c"/>
+                            <constraint firstItem="eOp-Id-L65" firstAttribute="top" secondItem="Bab-vH-0Hz" secondAttribute="bottom" constant="12" id="y50-z2-R7c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1xl-0b-2ts"/>

@@ -50,7 +50,7 @@ class MyTripsViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cellImageViews = cell.destinationImageViews!
         for i in 0..<cellImageViews.count {
             if (i < tripDestinations.count) {
-                cellImageViews[i].image = tripDestinations[i].cityImg
+                cellImageViews[i].image = UIImage(named: tripDestinations[i].cityImgFile)
             }
         }
         cell.tripNameLabel.text = testData[indexPath.row].tripName

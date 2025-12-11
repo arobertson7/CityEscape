@@ -31,7 +31,7 @@ class TripDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
             let destination = destinations[indexPath.row / 2]
             
             cell.cityNameLabel.text = destination.cityName
-            cell.cityImageView.image = destination.cityImg
+            cell.cityImageView.image = UIImage(named: destination.cityImgFile)
             
             cell.cityImageView.layer.cornerRadius = 30.0
             cell.cityImageView.layer.masksToBounds = true

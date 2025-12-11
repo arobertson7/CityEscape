@@ -9,28 +9,32 @@ import UIKit
 
 class MyCitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let cellReuseIdentifier = "MyCityCell"
-    let testData: [City] = [City(cityName: "Albuquerque, New Mexico", cityImgFile: "albuquerque", cityAbbreviation: "ABQ"),
-                          City(cityName: "Amalfi Coast, Italy", cityImgFile: "amalfi_coast", cityAbbreviation: "Amalfi"),
-                          City(cityName: "Amsterdam, Netherlands", cityImgFile: "amsterdam", cityAbbreviation: "AMS"),
-                          City(cityName: "Bar Harbor, Maine", cityImgFile: "bar_harbor", cityAbbreviation: "BH"),
-                          City(cityName: "Barcelona, Spain", cityImgFile: "barcelona", cityAbbreviation: "Barca")]
+    @IBOutlet var tableView: UITableView!
+    var dataModel: DataModel!
+    var myCities = [City]()
+    
+//    let testData: [City] = [City(cityName: "Albuquerque, New Mexico", cityImgFile: "albuquerque", cityAbbreviation: "ABQ"),
+//                          City(cityName: "Amalfi Coast, Italy", cityImgFile: "amalfi_coast", cityAbbreviation: "Amalfi"),
+//                          City(cityName: "Amsterdam, Netherlands", cityImgFile: "amsterdam", cityAbbreviation: "AMS"),
+//                          City(cityName: "Bar Harbor, Maine", cityImgFile: "bar_harbor", cityAbbreviation: "BH"),
+//                          City(cityName: "Barcelona, Spain", cityImgFile: "barcelona", cityAbbreviation: "Barca")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        myCities = dataModel.myCities
     }
     
     // MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testData.count
+        return myCities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! MyCityCell
         
-        cell.cityImageView.image = testData[indexPath.row].cityImg
-        cell.cityNameLabel.text = testData[indexPath.row].cityName
+        cell.cityImageView.image = UIImage(named: myCities[indexPath.row].cityImgFile)
+        cell.cityNameLabel.text = myCities[indexPath.row].cityName
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.systemGray.cgColor
         
@@ -38,6 +42,12 @@ class MyCitiesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
 
+    // MARK: - observer functions
+    func updateMyCities(_ myCities: [City]) {
+        self.myCities = myCities
+        tableView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 

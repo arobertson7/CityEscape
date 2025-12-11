@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-class City {
+class City: Codable {
     let cityName: String
-    let cityImg: UIImage?
+    let cityImgFile: String
     let cityAbbreviation: String
     
     init(cityName: String, cityImgFile: String, cityAbbreviation: String) {
         self.cityName = cityName
-        self.cityImg = UIImage(named: cityImgFile)
+        self.cityImgFile = cityImgFile
         self.cityAbbreviation = cityAbbreviation
     }
 }
